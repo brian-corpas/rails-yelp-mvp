@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= @restaurant.name %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= @restaurant.address %>
+</h6>
+    <h5 class="card-link"><%= link_to 'Add a review', new_restaurant_review_path(@restaurant) %></h5>
+  </div>
+</div>
+
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+  <li class="list-group-item"><%= review.content %>
+    <%= link_to "Remove",
+                  restaurant_reviews_path(review),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+  </li>
+  <% end %>
+  <div >
+    <button type="button" class="btn btn-info">
+<%= link_to 'Back', restaurants_path %></button>
+ </div>
+</ul>
+
+
+
+
+
+
+
+

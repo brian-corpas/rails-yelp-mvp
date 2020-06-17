@@ -1,0 +1,6 @@
+<%= simple_form_for [ @restaurant, @review ] do |f| %>
+<div width=30%>
+  <%= f.input :content %>
+</div>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>
